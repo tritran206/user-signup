@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Signup</h1>
+  <form method='post' action='/confirmation'>
+    <label>
+      Username:
+      <input type=text name='username' />
+      <p class="error">{{username_error}}</p>
+    </label>
+    <label>
+      Password:
+      <input type=password name='pwd' />
+      <p class="error">{{pwd_error}}</p>
+    </label>
+    <label>
+      Verify Password:
+      <input type=password name='verifypw' />
+      <p class="error">{{pw_error}}</p>
+    </label>
+    <label>
+      Email:
+      <input type=email name='useremail' />
+      <p class="error">{{useremail_error}}</p>
+    </label>
+    <input type="submit" value='confirm' />
+  </form>
+{% endblock %}
