@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
+{% block head %}
+  <style>
+    .error { color: red; }
+  </style>
+{% endblock %}
+
 {% block content %}
   <h1>Signup</h1>
-  <form method='post' action='/confirmation'>
+  <form method='post' action='/validate'>
     <label>
       Username:
-      <input type=text name='username' />
+      <input type=text name='username' value={{username}}>
       <p class="error">{{username_error}}</p>
     </label>
     <label>
@@ -16,11 +22,11 @@
     <label>
       Verify Password:
       <input type=password name='verifypw' />
-      <p class="error">{{pw_error}}</p>
+      <p class="error">{{vpwd_error}}</p>
     </label>
     <label>
       Email:
-      <input type=email name='useremail' />
+      <input type=email name='useremail' value={{useremail}}>
       <p class="error">{{useremail_error}}</p>
     </label>
     <input type="submit" value='confirm' />
